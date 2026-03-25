@@ -146,7 +146,17 @@
                 </button>
             </div>
             <div id="searchResults" class="search-results">
+
+
+            <!--<button id="selectAllBtn" type="button" style="color: #fff; width: 100px;height: 50px">全选</button> -->
+            <button id="selectAllBtn" type="button" style="color: #f30505;background-color: #1abc9c; width: 100px;margin: 1px 1px; padding: 1px 1px;border-radius: 
+25px;">全选</button>    
+
+<!-- 美化后的一键选中/取消按钮（替换原有按钮） -->
+     
+               
                 <div class="search-results-toolbar">
+
                     <div class="import-dropdown">
                         <button
                             id="importSelectedBtn"
@@ -519,6 +529,17 @@
         mobileScript.defer = false;
         document.body.appendChild(mobileScript);
     }
+
+
+
+// 一键选中所有歌曲选择按钮
+document.getElementById('selectAllBtn').addEventListener('click', () => {
+  // 只选中 #searchResultsList 容器内的 .search-result-select 按钮
+  document.querySelectorAll('#searchResultsList .search-result-select').forEach(btn => {
+    btn.click(); // 触发原有点击事件，无需改动原有逻辑
+  });
+});
+
 </script>
 </body>
 </html>
